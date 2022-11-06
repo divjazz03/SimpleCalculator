@@ -178,7 +178,7 @@ public class SimpleCalculator implements ActionListener {
            textField.setText(String.valueOf(temp));
         }}catch(NumberFormatException ex){
         textField.setText("no value");
-        Thread.sleep(1000);
+        Thread.sleep(3000);
         textField.setText("");}}
         catch(InterruptedException interruptedException){}
     }
