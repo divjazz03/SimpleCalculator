@@ -113,7 +113,7 @@ public class SimpleCalculator implements ActionListener {
     }
 
     @Override
-    public void actionPerformed(ActionEvent e) {
+    public void actionPerformed(ActionEvent e)  {
        
         for (int i = 0; i < 10; i++) {
             if (e.getSource() == numberButtons[i]) {
@@ -172,11 +172,14 @@ public class SimpleCalculator implements ActionListener {
                 textField.setText(textField.getText()+string.charAt(i));
             }
         }
-        try{if (e.getSource() == negButton) {
+        try{try{if (e.getSource() == negButton) {
            double temp = Double.parseDouble(textField.getText());
            temp*=-1;
            textField.setText(String.valueOf(temp));
         }}catch(NumberFormatException ex){
-        textField.setText("no value");}
+        textField.setText("no value");
+        Thread.sleep(1000);
+        textField.setText("");}}
+        catch(InterruptedException interruptedException){}
     }
 }
