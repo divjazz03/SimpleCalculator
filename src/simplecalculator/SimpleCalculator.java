@@ -32,6 +32,7 @@ public class SimpleCalculator implements ActionListener {
         
         textField = new JTextField();
         textField.setBounds(50,25,300,50);
+        
         textField.setFont(myFont);
         textField.setEditable(false);
         
@@ -146,18 +147,10 @@ public class SimpleCalculator implements ActionListener {
         if (e.getSource() == equalButton) {
             num2 = Double.parseDouble(textField.getText());
             switch (operator) {
-                case '+':
-                    result = num1 + num2; 
-                    break;
-                case '-':
-                    result = num1 - num2;
-                    break;
-                case '*':
-                    result = num1 * num2;
-                    break;
-                case '/':
-                        result = num1 / num2;
-                        break;
+                case '+' -> result = num1 + num2;
+                case '-' -> result = num1 - num2;
+                case '*' -> result = num1 * num2;
+                case '/' -> result = num1 / num2;
             }
             textField.setText(String.valueOf(result));
             num1 = result;
